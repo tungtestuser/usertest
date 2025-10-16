@@ -1,8 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key Manager - TungVN</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #1e1e1e;
+      padding: 20px 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.1);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+    h1 {
+      color: #00e676;
+      margin-bottom: 10px;
+    }
+    pre {
+      background: #000;
+      color: #0ff;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 14px;
+      overflow-x: auto;
+    }
+    .expired {
+      color: #ff1744;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #00e676;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #00c853;
+    }
+  </style>
+</head>
 <body>
-<pre>
-TungVN
-</pre>
+  <div class="container">
+    <h1>🔑 TungVN Key</h1>
+    <p id="date"></p>
+    <pre id="keyArea"></pre>
+    <p id="status"></p>
+    <button onclick="window.location.reload()">🔁 Tải lại trang</button>
+  </div>
+
+  <script>
+    // Danh sách key và ngày hết hạn (YYYY-MM-DD)
+    const keys = [
+      { key: "TungVN", expire: "2025-10-30" },
+      { key: "VIP123", expire: "2025-11-01" },
+      { key: "TEST999", expire: "2025-11-15" }
+    ];
+
+    const now = new Date();
+    const keyArea = document.getElementById("keyArea");
+    const status = document.getElementById("status");
+    const dateNow = document.getElementById("date");
+    dateNow.textContent = "Ngày hiện tại: " + now.toLocaleDateString("vi-VN");
+
+    // Lọc key còn hạn
+    const activeKeys = keys.filter(k => new Date(k.expire) >= now);
+
+    if (activeKeys.length > 0) {
+      keyArea.textContent = activeKeys.map(k => `${k.key} (hết hạn: ${k.expire})`).join("\n");
+      status.textContent = "✅ Key còn hạn sử dụng";
+    } else {
+      keyArea.textContent = "Không có key hợp lệ.";
+      keyArea.classList.add("expired");
+      status.textContent = "❌ Tất cả key đã hết hạn hoặc bị xoá tự động.";
+    }
+  </script>
 </body>
 </html>
