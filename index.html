@@ -1,81 +1,71 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Key System - TungVN</title>
-<style>
-  body {
-    background-color: #0d1117;
-    color: #c9d1d9;
-    font-family: 'Courier New', monospace;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Key Kích Hoạt</title>
+  <!-- 🌙 Giao diện dark -->
+  <style>
+    body {
+      background-color: #0d1117;
+      color: #c9d1d9;
+      font-family: 'Courier New', monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      color: #58a6ff;
+      margin-bottom: 10px;
+    }
+    pre {
+      background: #161b22;
+      border: 1px solid #30363d;
+      padding: 15px 25px;
+      border-radius: 12px;
+      font-size: 18px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(56, 139, 253, 0.3);
+    }
+    button {
+      margin-top: 20px;
+      background-color: #238636;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.2s;
+    }
+    button:hover {
+      background-color: #2ea043;
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 13px;
+      opacity: 0.7;
+    }
+  </style>
 
-  h1 {
-    color: #58a6ff;
-    font-size: 1.8em;
-    margin-bottom: 10px;
-  }
-
-  pre {
-    background-color: #161b22;
-    color: #39d353;
-    padding: 15px 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #0d1117;
-    font-size: 1.2em;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    width: 80%;
-    max-width: 500px;
-    text-align: center;
-  }
-
-  .expired {
-    color: #ff6b6b;
-  }
-
-  button {
-    background-color: #238636;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 1em;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: 0.2s;
-  }
-
-  button:hover {
-    background-color: #2ea043;
-  }
-
-  footer {
-    color: #8b949e;
-    margin-top: 30px;
-    font-size: 0.9em;
-  }
-</style>
+  <!-- 🔁 Tự tải lại trang sau 5 phút (300 giây) -->
+  <meta http-equiv="refresh" content="300">
 </head>
 <body>
-  <h1>🔑 Key Kích Hoạt - TungVN</h1>
+  <h1>🔐 Key Kích Hoạt</h1>
 
-  <!-- Danh sách key (chỉ dùng thẻ <pre>) -->
+  <!-- Hiển thị key -->
   <pre>
-TungVN-2025-10-30
-VIP2025-11-15
-</pre>
+TungVN-KEY-2025
+Hết hạn sau: 5 phút kể từ khi tải trang
+  </pre>
 
-  <button onclick="location.reload()">🔄 Load lại trang</button>
+  <!-- Nút tải lại -->
+  <button onclick="location.reload()">🔁 Tải lại trang</button>
 
-  <footer>© 2025 TungVN | Key sẽ hết hạn tự động sau ngày ghi kèm</footer>
+  <footer>© 2025 TungVN | Key tự hết hạn sau 5 phút</footer>
 </body>
 </html>
